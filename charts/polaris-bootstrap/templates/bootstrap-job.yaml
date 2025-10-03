@@ -12,7 +12,10 @@ spec:
       initContainers:
         - name: wait-for-polaris
           image: busybox:1.36
-          command: ["sh", "-c", "until wget --spider -q http://polaris-mgmt:8182/q/health/ready; do sleep 5; done"]
+          command: 
+            - "sh"
+            - "-c"
+            - "until wget --spider -q http://polaris-mgmt:8182/q/health/ready; do sleep 5; done"
       containers:
         - name: bootstrap
           image: apache/polaris-admin-tool:latest
@@ -33,4 +36,8 @@ spec:
                   name: polaris-persistence
                   key: jdbcUrl
           command: ["bootstrap"]
-          args: ["-c", "${BOOTSTRAP_CREDENTIALS}", "-r", "${BOOTSTRAP_REALM}"]
+          args: 
+            - "-c"
+            - {{ .Values.bootstrap.credentials | quote }}
+            - "-r"
+            - {{ .Values.bootstrap.realm | quote }}

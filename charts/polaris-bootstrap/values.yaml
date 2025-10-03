@@ -1,3 +1,7 @@
+bootstrap:
+  credentials: "POLARIS,admin,changeme"
+  realm: "POLARIS"
+
 persistenceSecret:
   name: polaris-persistence
   usernameKey: username
