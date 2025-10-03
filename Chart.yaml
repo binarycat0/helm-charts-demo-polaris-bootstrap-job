@@ -2,8 +2,8 @@ apiVersion: v2
 name: binarycat-polaris-bootstrap
 description: Bootstrap Root User job for Apache Polaris catalog
 type: application
-version: 1.0.0
-appVersion: "1.0.0"
+version: 1.0.1
+appVersion: "1.0.1"
 keywords:
   - polaris
   - apache
