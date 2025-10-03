@@ -2,7 +2,7 @@ bootstrap:
   credentials: "POLARIS,admin,changeme"
   realm: "POLARIS"
 
-polaris-mngt:
+polarisMgmt:
   host: polaris-mgmt
   port: 8182
 

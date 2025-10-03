@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: polaris-bootstrap-${TIMESTAMP}
+  name: polaris-bootstrap
   namespace: polaris
 spec:
   ttlSecondsAfterFinished: 300
@@ -12,10 +12,10 @@ spec:
       initContainers:
         - name: wait-for-polaris
           image: busybox:1.36
-          command: 
-            - "sh"
-            - "-c"
-            - "until wget --spider -q http://{{ .Values.polaris-mngt.host }}:{{ .Values.polaris-mngt.port }}/q/health/ready; do sleep 5; done".credentials }}:8182/q/health/ready; do sleep 5; done"
+          command:
+            - sh
+            - -c
+            - "until wget --spider -q http://{{ .Values.polarisMgmt.host }}:{{ .Values.polarisMgmt.port }}/q/health/ready; do sleep 5; done"
       containers:
         - name: bootstrap
           image: apache/polaris-admin-tool:latest
