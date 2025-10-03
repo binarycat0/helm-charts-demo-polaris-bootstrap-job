@@ -38,6 +38,6 @@ spec:
           command: ["bootstrap"]
           args: 
             - "-c"
-            - {{ .Values.bootstrap.credentials | quote }}
+            - "{{ .Values.bootstrap.realm }},{{ .Values.bootstrap.root }},{{ .Values.bootstrap.password }}"
             - "-r"
             - {{ .Values.bootstrap.realm | quote }}
