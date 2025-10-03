@@ -21,20 +21,11 @@ spec:
           image: apache/polaris-admin-tool:latest
           env:
             - name: QUARKUS_DATASOURCE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: polaris-persistence
-                  key: username
+              value: {{ .Values.persistence.username }}
             - name: QUARKUS_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: polaris-persistence
-                  key: password
+              value: {{ .Values.persistence.password }}
             - name: QUARKUS_DATASOURCE_JDBC_URL
-              valueFrom:
-                secretKeyRef:
-                  name: polaris-persistence
-                  key: jdbcUrl
+              value: "jdbc:postgresql://{{ .Values.persistence.host }}:{{ .Values.persistence.port }}/{{ .Values.persistence.database }}"
           args: 
             - "bootstrap"
             - "-c"
