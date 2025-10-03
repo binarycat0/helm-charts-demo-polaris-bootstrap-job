@@ -3,9 +3,9 @@ entries:
   binarycat-polaris-bootstrap:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2025-10-03T14:59:54.268688173Z"
+    created: "2025-10-03T15:20:48.998324421Z"
     description: Bootstrap Root User job for Apache Polaris catalog
-    digest: d0a251ee3c5e1052ba09189b98f16050d452af43a2a5d9e9ce566e73b11c1ce6
+    digest: 2e134fd9f2692b98624ae692475573bf249061a28d80de09e903e37fb520c0ce
     home: https://github.com/binarycat0/helm-charts-demo-polaris-bootstrap-job
     keywords:
     - polaris
@@ -20,4 +20,4 @@ entries:
     urls:
     - https://binarycat0.github.io/helm-charts-demo-polaris-bootstrap-job/binarycat-polaris-bootstrap-1.0.1.tgz
     version: 1.0.1
-generated: "2025-10-03T14:59:54.267976454Z"
+generated: "2025-10-03T15:20:48.997551989Z"
