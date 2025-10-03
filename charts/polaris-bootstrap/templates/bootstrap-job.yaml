@@ -15,7 +15,7 @@ spec:
           command: 
             - "sh"
             - "-c"
-            - "until wget --spider -q http://polaris-mgmt:8182/q/health/ready; do sleep 5; done"
+            - "until wget --spider -q http://{{ .Values.polaris-mngt.host }}:{{ .Values.polaris-mngt.port }}/q/health/ready; do sleep 5; done".credentials }}:8182/q/health/ready; do sleep 5; done"
       containers:
         - name: bootstrap
           image: apache/polaris-admin-tool:latest
