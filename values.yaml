@@ -1,0 +1,21 @@
+bootstrap:
+  credentials: "POLARIS,admin,changeme"
+  realm: "POLARIS"
+
+polarisMgmt:
+  host: polaris-mgmt
+  port: 8182
+
+persistenceSecret:
+  name: polaris-persistence
+  usernameKey: username
+  passwordKey: password
+  jdbcUrlKey: jdbcUrl
+
+image:
+  repository: apache/polaris-admin-tool
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources:
+  {}
