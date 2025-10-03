@@ -35,8 +35,8 @@ spec:
                 secretKeyRef:
                   name: polaris-persistence
                   key: jdbcUrl
-          command: ["bootstrap"]
           args: 
+            - "bootstrap"
             - "-c"
             - "{{ .Values.bootstrap.realm }},{{ .Values.bootstrap.root }},{{ .Values.bootstrap.password }}"
             - "-r"
