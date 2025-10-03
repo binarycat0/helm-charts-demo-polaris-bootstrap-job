@@ -1,6 +1,7 @@
 bootstrap:
-  credentials: "POLARIS,admin,changeme"
   realm: "POLARIS"
+  root: "root"
+  password: "s3cr3t"
 
 polarisMgmt:
   host: polaris-mgmt
