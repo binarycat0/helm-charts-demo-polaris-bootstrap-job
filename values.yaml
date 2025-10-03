@@ -1,22 +1,20 @@
-bootstrap:
-  realm: "POLARIS"
-  root: "root"
-  password: "s3cr3t"
-
-polarisMgmt:
-  host: polaris-mgmt
-  port: 8182
-
-persistenceSecret:
-  name: polaris-persistence
-  usernameKey: username
-  passwordKey: password
-  jdbcUrlKey: jdbcUrl
-
 image:
   repository: apache/polaris-admin-tool
   tag: latest
   pullPolicy: IfNotPresent
 
-resources:
-  {}
+polarisMgmt:
+  host: polaris-mgmt
+  port: 8182
+
+persistence:
+  database: "polaris"
+  username: "polaris"
+  password: "polaris"
+  host: "polaris-postgresql"
+  port: 5432
+
+bootstrap:
+  realm: "POLARIS"
+  root: "root"
+  password: "s3cr3t"
