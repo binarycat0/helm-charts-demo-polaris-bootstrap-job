@@ -1,0 +1,13 @@
+persistenceSecret:
+  name: polaris-persistence
+  usernameKey: username
+  passwordKey: password
+  jdbcUrlKey: jdbcUrl
+
+image:
+  repository: apache/polaris-admin-tool
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources:
+  {}
