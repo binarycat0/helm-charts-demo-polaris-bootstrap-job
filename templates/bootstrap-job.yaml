@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: polaris-bootstrap
-  namespace: polaris
+  namespace: {{ .Release.Namespace }}
 spec:
   ttlSecondsAfterFinished: 300
   backoffLimit: 3
@@ -18,7 +18,8 @@ spec:
             - "until wget --spider -q http://{{ .Values.polarisMgmt.host }}:{{ .Values.polarisMgmt.port }}/q/health/ready; do sleep 5; done"
       containers:
         - name: bootstrap
-          image: apache/polaris-admin-tool:latest
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: QUARKUS_DATASOURCE_USERNAME
               value: {{ .Values.persistence.username }}
