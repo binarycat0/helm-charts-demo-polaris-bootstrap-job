@@ -23,10 +23,31 @@ jobs:
           helm package .
           helm repo index . --url https://binarycat0.github.io/helm-charts-demo-polaris-bootstrap-job
 
+      - name: Build Jekyll site
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Jekyll and Bundler
+        run: |
+          gem install jekyll bundler
+
+      - name: Copy README.md to index.md
+        run: cp README.md index.md
+
+      - name: Prepare index.md with front matter
+        run: |
+          echo -e "---\nlayout: default\ntitle: Home\n---\n" > index.md
+          cat README.md >> index.md
+
+      - name: Build site with Jekyll
+        run: |
+          jekyll build --source . --destination ./_site
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./_site
           publish_branch: gh-pages
           keep_files: true
