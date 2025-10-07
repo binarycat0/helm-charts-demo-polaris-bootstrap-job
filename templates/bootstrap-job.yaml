@@ -4,8 +4,8 @@ metadata:
   name: polaris-bootstrap
   namespace: {{ .Release.Namespace }}
 spec:
-  ttlSecondsAfterFinished: 300
-  backoffLimit: 3
+  ttlSecondsAfterFinished: 60
+  backoffLimit: 0
   template:
     spec:
       restartPolicy: Never
