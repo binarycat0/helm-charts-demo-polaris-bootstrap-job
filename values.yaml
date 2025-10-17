@@ -1,5 +1,5 @@
 image:
-  repository: apache/polaris-admin-tool
+  repository: binarycat/polaris-admin-tool
   tag: latest
   pullPolicy: IfNotPresent
 
