@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: polaris-bootstrap
+  name: {{ .Values.jobName | default "polaris-bootstrap" }}
   namespace: {{ .Release.Namespace }}
 spec:
   ttlSecondsAfterFinished: 60
