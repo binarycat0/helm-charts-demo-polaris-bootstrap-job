@@ -27,9 +27,13 @@ spec:
               value: {{ .Values.persistence.password }}
             - name: QUARKUS_DATASOURCE_JDBC_URL
               value: "jdbc:postgresql://{{ .Values.persistence.host }}:{{ .Values.persistence.port }}/{{ .Values.persistence.database }}"
-          args: 
+          args:
             - "bootstrap"
-            - "-c"
-            - "{{ .Values.bootstrap.realm }},{{ .Values.bootstrap.root }},{{ .Values.bootstrap.password }}"
+            {{- range .Values.bootstrap.realms }}
             - "-r"
-            - {{ .Values.bootstrap.realm | quote }}
+            - {{ . | quote }}
+            {{- end }}
+            {{- range .Values.bootstrap.credentials }}
+            - "-c"
+            - {{ . | quote }}
+            {{- end }}

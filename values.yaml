@@ -17,6 +17,7 @@ persistence:
   port: 5432
 
 bootstrap:
-  realm: "POLARIS"
-  root: "root"
-  password: "s3cr3t"
+  realms:
+    - "POLARIS"
+  credentials:
+    - "POLARIS,root,s3cr3t"
