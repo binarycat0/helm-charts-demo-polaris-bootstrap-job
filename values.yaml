@@ -3,6 +3,8 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
+jobName: "polaris-bootstrap"
+
 polarisMgmt:
   host: polaris-mgmt
   port: 8182
